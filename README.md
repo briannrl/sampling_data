@@ -1,3 +1,5 @@
+DESKRIPSI CODE BASH DI DALAM FILE `sampling.sh`
+
 1. `wget https://github.com/labusiam/dataset/raw/main/weather_data.xlsx` Download weather_data.xlsx
 2. `in2csv weather_data.xlsx --sheet "weather_2014" > weather_2014.csv` Convert sheet weather_2014 menjadi weather_2014.csv
 3. `in2csv weather_data.xlsx --sheet "weather_2015" > weather_2015.csv` Convert sheet weather_2015 menjadi weather_2015.csv
