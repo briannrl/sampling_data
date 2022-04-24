@@ -1,11 +1,15 @@
 #!/bin/bash
 
-wget https://github.com/labusiam/dataset/raw/main/weather_data.xlsx
+if [[ ! -d data ]]; then
+	mkdir data
+fi
 
-in2csv weather_data.xlsx --sheet "weather_2014" > weather_2014.csv
-in2csv weather_data.xlsx --sheet "weather_2015" > weather_2015.csv
+wget -P data https://github.com/labusiam/dataset/raw/main/weather_data.xlsx
 
-csvstack weather_2014.csv weather_2015.csv > weather.csv
-rm weather_data.xlsx
+in2csv data/weather_data.xlsx --sheet "weather_2014" > data/weather_2014.csv
+in2csv data/weather_data.xlsx --sheet "weather_2015" > data/weather_2015.csv
 
-csvlook weather.csv | sample -r 0.3 > sample_weather.csv
+csvstack data/weather_2014.csv data/weather_2015.csv > data/weather.csv
+rm data/weather_data.xlsx
+
+csvlook data/weather.csv | sample -r 0.3 > data/sample_weather.csv
