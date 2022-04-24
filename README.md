@@ -9,4 +9,4 @@ DESKRIPSI CODE BASH DI DALAM FILE `sampling.sh`
 4. `in2csv data/weather_data.xlsx --sheet "weather_2015" > data/weather_2015.csv` Convert sheet weather_2015 menjadi weather_2015.csv
 5. `csvstack data/weather_2014.csv data/weather_2015.csv > data/weather.csv` Menggabungkan weather_2014.csv dan weather_2015.csv menjadi 1 file csv
 6. `rm data/weather_data.xlsx` Hapus file weather_data.xlsx
-7. `csvlook data/weather.csv | sample -r 0.3 > data/sample_weather.csv` Sampling weather.csv dengan proporsi 0.3 dari total file dan simpan di file sample_weather.csv
+7. `cat data/weather.csv | sample -r 0.3 > data/sample_weather.csv` Sampling weather.csv dengan proporsi 0.3 dari total file dan simpan di file sample_weather.csv
